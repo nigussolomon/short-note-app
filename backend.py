@@ -20,6 +20,13 @@ def insert_val(title, note):
     conn.commit()
     conn.close()
     
+def det(title):
+    conn = sqlite3.connect("storage.db")
+    cur = conn.cursor()
+    cur.execute("DELETE FROM notes WHERE title=? ", (title,)) 
+    conn.commit()
+    conn.close()
+    
 def close():
     sys.exit()
     

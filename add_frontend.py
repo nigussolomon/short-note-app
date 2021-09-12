@@ -40,7 +40,7 @@ def add_frontend():
     add = Label(frame_2, text='ADD NOTES \n Here you can store your \n notes and you can add them to the \n database so you can access it later. \n \n \n Add your title', justify=LEFT, bg='#ADD8E6')
     add.grid(row=0, column=0)
 
-    add_val = StringVar()
+    add_val = StringVar(window)
     add_view = Entry(frame_2, textvariable=add_val, width=32)
     add_view.grid(row=1, column=0, pady=5)
 
