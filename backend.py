@@ -26,6 +26,24 @@ def det(title):
     cur.execute("DELETE FROM notes WHERE title=? ", (title,)) 
     conn.commit()
     conn.close()
+
+def search(title):
+    conn = sqlite3.connect("storage.db")
+    cur = conn.cursor()
+    cur.execute("SELECT *FROM notes WHERE title=?", (title,))
+    par = cur.fetchall()
+    conn.commit()
+    conn.close()
+    return par
+
+def view():
+    conn = sqlite3.connect("storage.db")
+    cur = conn.cursor()
+    cur.execute("SELECT title FROM notes ")
+    rows = cur.fetchall()
+    conn.commit()
+    conn.close()
+    return rows
     
 def close():
     sys.exit()
