@@ -1,11 +1,15 @@
 import tkinter as tk
 from tkinter import *
 import add_frontend
+import delete_frontend
 import backend
 
 def category():
     def btn1():
         add_frontend.add_frontend()
+        category_window.wm_withdraw()
+    def btn2():
+        delete_frontend.delete_func()
         category_window.wm_withdraw()
         
 
@@ -19,7 +23,7 @@ def category():
     menu_frame.grid(row=0, column=0, padx=10, pady=2 )
     add_btn = Button(menu_frame, text = "Add Note", width=10, bg="black", fg="#add8e6",command=btn1 )
     add_btn.pack()
-    del_btn = Button(menu_frame, text = "Delete Note", width=10, bg="black", fg="#add8e6")
+    del_btn = Button(menu_frame, text = "Delete Note", width=10, bg="black", fg="#add8e6", command=btn2)
     del_btn.pack()
     ser_btn = Button(menu_frame, text = "Search Note", width=10, bg="black", fg="#add8e6")
     ser_btn.pack()

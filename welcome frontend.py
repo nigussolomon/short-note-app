@@ -14,6 +14,7 @@ def open():
     window.wm_withdraw()
 
 
+
 welcome_intro = Label(window, text="Welcome to Short Note Organizer where you can organize and arrange your notes.", bg="#add8e6")
 welcome_intro.config(font=15)
 welcome_intro.pack(pady=(60,10))
