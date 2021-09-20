@@ -30,7 +30,7 @@ def det(title):
 def search(title):
     conn = sqlite3.connect("storage.db")
     cur = conn.cursor()
-    cur.execute("SELECT *FROM notes WHERE title=?", (title,))
+    cur.execute("SELECT note FROM notes WHERE title=?", (title,))
     par = cur.fetchall()
     conn.commit()
     conn.close()
